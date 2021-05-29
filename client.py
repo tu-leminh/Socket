@@ -302,3 +302,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         my_gui = MainForm(root)
         root.protocol("WM_DELETE_WINDOW", my_gui.on_closing)
         root.mainloop()
+    s.sendall(bytes("QUIT", encoding='utf-8'))

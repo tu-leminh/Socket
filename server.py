@@ -100,6 +100,9 @@ def multi_threaded_sever(connection,stt):
         if data=='NEW CLIENT CONNECTED':
             response = f'HELLO CLIENT {stt}'
         data=data.split()
+        if data[0]=='QUIT':
+            print(f"CLIENT {stt} DISCONNECTED")
+            return
         if data[0]=='PING':
             response="OK"
         if data[0]=='QUERY':
